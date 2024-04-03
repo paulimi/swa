@@ -1,3 +1,0 @@
-package swa;
-hallo
-hey 
