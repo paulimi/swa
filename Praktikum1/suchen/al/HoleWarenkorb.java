@@ -1,6 +1,6 @@
-package suchen.al;
+package Praktikum1.suchen.al;
 
-import suchen.acl.WarenkorbFuerSuche;
+import Praktikum1.suchen.acl.WarenkorbFuerSuche;
 
 public interface HoleWarenkorb{
     WarenkorbFuerSuche holeWarenkorb();
