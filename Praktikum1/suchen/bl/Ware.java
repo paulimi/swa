@@ -1,4 +1,4 @@
-package Praktikum1.suchen.bl;
+package suchen.bl;
 
 public class Ware {
 
