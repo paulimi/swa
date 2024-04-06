@@ -1,7 +1,7 @@
 package ui.view;
 
 public class BegruessungView {
-    public void begruessung(){
+    public void printBegruessung(){
         System.out.println("------ Willkommen in der SimpleShoppingApp ------");
     }
 
