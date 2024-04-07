@@ -14,4 +14,19 @@ public class Ware {
         this.beschreibung = beschreibung;
     }
 
+   public long getWarennummer(){
+        return this.warennummer;
+   }
+
+   public String getName(){
+    return this.name;
+   }
+
+   public Geld getPreis(){
+    return this.preis;
+   }
+
+   public String getBeschreibung(){
+    return this.beschreibung;
+   }
 }
