@@ -5,6 +5,6 @@ import suchen.bl.Ware;
 
 public class WarenKonverter {
     public WareDTO wareToDto(Ware ware, int id){
-        return new WareDTO();
+        return new WareDTO(ware, id);
     }
 }
