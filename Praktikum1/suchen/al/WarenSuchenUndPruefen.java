@@ -22,7 +22,7 @@ public class WarenSuchenUndPruefen implements Katalog {
     }
 
     @Override
-    public ArrayList<Ware> suchen(long warenNummer) {
+    public Ware suchen(long warenNummer) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'suchen'");
     }

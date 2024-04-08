@@ -3,16 +3,20 @@ import java.sql.SQLException;
 
 import DB.Db;
 
+import ui.control.MenueControl;
 
 public class SimpleShoppingApp {
+
     public static void main(String[] args) {
-        
-       Db db = new Db();
-        try {
-            Connection connection = db.openConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        MenueControl menueControl = new MenueControl();
+        menueControl.navigateMenue();
+        Db db = new Db();
+            try {
+                Connection connection = db.openConnection();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         
     }
 }

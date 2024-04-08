@@ -7,16 +7,23 @@ import suchen.ui.control.ControlSuchen;
 
 public class MenueControl {
 
-    SimpleShoppingAppView view = new SimpleShoppingAppView();
-    ControlSuchen controlSuchen = new ControlSuchen();
-    boolean isRunning = true;
+    SimpleShoppingAppView view;
+    ControlSuchen controlSuchen;
+    boolean isRunning;
+
+    public MenueControl(){
+        view = new SimpleShoppingAppView();
+        controlSuchen = new ControlSuchen(this);
+        isRunning = true;
+        view.printBegruessung();
+    }
 
     public void navigateMenue(){
         Scanner scanner = new Scanner(System.in);
         String in;
 
         while(isRunning){
-            view.printView();
+            view.printMenue();
             in = scanner.nextLine();
             switch(in){
                 case "1": 
@@ -33,5 +40,6 @@ public class MenueControl {
 
             }
         }
+        scanner.close();
     }
 }
