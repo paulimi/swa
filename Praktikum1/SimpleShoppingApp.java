@@ -1,6 +1,5 @@
 import java.sql.Connection;
 import java.sql.SQLException;
-
 import DB.Db;
 
 import ui.control.MenueControl;
