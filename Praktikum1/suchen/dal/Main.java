@@ -3,7 +3,8 @@ package suchen.dal;
 
 import java.sql.SQLException;
 
-//import suchen.dal.Db;
+import DB.Db;
+
 public class Main {
 
     public static void main(String[] args) {

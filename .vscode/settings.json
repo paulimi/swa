@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "Praktikum1"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyclient.jar",
+        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyoptionaltools.jar",
+        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyshared.jar",
+        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbytools.jar",
+        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derby.jar"
+    ]
+}
