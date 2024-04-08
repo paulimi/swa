@@ -13,7 +13,7 @@ public class MenueControl {
 
     public MenueControl(){
         view = new SimpleShoppingAppView();
-        controlSuchen = new ControlSuchen();
+        controlSuchen = new ControlSuchen(this);
         isRunning = true;
         view.printBegruessung();
     }

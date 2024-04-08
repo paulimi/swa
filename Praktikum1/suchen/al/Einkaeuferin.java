@@ -6,7 +6,9 @@ import suchen.bl.Produktinformation;
 import suchen.bl.Ware;
 
 public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
-    public int id;
+    private int id;
+    private WarenSuchenUndPruefen warenSuchenUndPruefen;
+
 
     @Override
     public boolean wareZuWarenkorbHinzufuegen(Ware ware) {
@@ -22,8 +24,7 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
 
     @Override
     public Ware sucheWare(String warenname) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sucheWare'");
+        return warenSuchenUndPruefen.suchen(warenname);
     }
 
 }
