@@ -8,9 +8,12 @@ import ui.control.MenueControl;
 public class ControlSuchen {
 
     SuchenStartView view = new SuchenStartView();
-    MenueControl menueControl = new MenueControl();
+    MenueControl menueControl;
     boolean isRunning = true;
 
+    public ControlSuchen(MenueControl menueControl){
+        this.menueControl = menueControl;
+    }
     public void controlSuchenStart(){
         Scanner scanner = new Scanner(System.in);
         String in;
@@ -27,6 +30,7 @@ public class ControlSuchen {
                 default:
             }
         }
+        scanner.close();
     
     }
 }
