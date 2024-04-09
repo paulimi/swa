@@ -1,5 +1,6 @@
 package suchen.al;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import suchen.bl.Produktinformation;
@@ -23,7 +24,7 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
     }
 
     @Override
-    public Ware sucheWare(String warenname) {
+    public ArrayList<Ware> sucheWare(String warenname) {
         return warenSuchenUndPruefen.suchen(warenname);
     }
 

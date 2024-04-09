@@ -1,5 +1,9 @@
 package suchen.ui.control;
 
-public class AuswahlControl {
+import java.util.ArrayList;
 
+import suchen.bl.Ware;
+
+public class AuswahlControl {
+    
 }
