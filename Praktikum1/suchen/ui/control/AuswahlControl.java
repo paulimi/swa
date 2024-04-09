@@ -1,9 +1,11 @@
 package suchen.ui.control;
 
-import java.util.ArrayList;
-
-import suchen.bl.Ware;
+import suchen.al.WaehleWare;
 
 public class AuswahlControl {
-    
+    WaehleWare waehleWare;
+
+    public AuswahlControl(WaehleWare waehleWare){
+        this.waehleWare = waehleWare;
+    }
 }

@@ -1,5 +1,11 @@
 package suchen.ui.control;
 
-public class PruefControl {
+import suchen.al.PruefeWare;
 
+public class PruefControl {
+    PruefeWare pruefeWare;
+
+    public PruefControl(PruefeWare pruefeWare){
+        this.pruefeWare = pruefeWare;
+    }
 }

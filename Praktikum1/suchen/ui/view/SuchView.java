@@ -6,4 +6,9 @@ public class SuchView {
         System.out.println("2. Semantic Matching");
         System.out.println("Wie willst du suchen?");
     }
+
+    public void printSuchbegriffEingabe(){
+        System.out.println("Wonach willst du suchen?");
+        System.out.println();
+    }
 }

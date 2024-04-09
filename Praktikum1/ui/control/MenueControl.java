@@ -3,17 +3,17 @@ package ui.control;
 import ui.view.SimpleShoppingAppView;
 import java.util.Scanner;
 
-import suchen.ui.control.StartSuchenControl;
+import suchen.ui.control.MainController;
 
 public class MenueControl {
 
     SimpleShoppingAppView view;
-    StartSuchenControl controlSuchen;
+    MainController controlSuchen;
     boolean isRunning;
 
     public MenueControl(){
         view = new SimpleShoppingAppView();
-        controlSuchen = new StartSuchenControl(this);
+        controlSuchen = new MainController(this);
         isRunning = true;
         view.printBegruessung();
     }

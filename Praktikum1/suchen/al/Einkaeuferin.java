@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import suchen.bl.Produktinformation;
+import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
 
 public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
     private int id;
     private WarenSuchenUndPruefen warenSuchenUndPruefen;
-
 
     @Override
     public boolean wareZuWarenkorbHinzufuegen(Ware ware) {
@@ -25,7 +25,12 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
 
     @Override
     public ArrayList<Ware> sucheWare(String warenname) {
-        return warenSuchenUndPruefen.suchen(warenname);
+        return new ArrayList<>();
+    }
+
+    @Override
+    public void algorithmusFestlegen(SuchAlgorithmus algorithmus){
+        warenSuchenUndPruefen.legeSuchalgorithmusFest(algorithmus);
     }
 
 }

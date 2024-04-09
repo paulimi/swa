@@ -3,25 +3,49 @@ package suchen.ui.control;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import suchen.al.SucheWare;
 import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
-import suchen.dal.WarenRepository;
 import suchen.ui.view.SuchView;
 
 public class SucheControl {
     SuchView suchView;
-    WarenRepository repository;
+    SucheWare einkaeuferin;
 
-    public void startSucheControl(String suchbegriff){
-        suchView = new SuchView();
-        suchView.printAlgorithmusWaehlen();
-
-        Scanner scanner = new Scanner(System.in);
-        String in = scanner.nextLine();
-        scanner.close();
+    public SucheControl(SucheWare sucheWare) {
+        this.einkaeuferin = sucheWare;
     }
 
-    public ArrayList<Ware> durchsucheDb(String suchbegriff, SuchAlgorithmus suchAlgorithmus){
-        return repository.sucheInDB(suchbegriff, suchAlgorithmus);
+    public void startSucheControl() {
+        algorithmusFestlegen();
+        suchView.printSuchbegriffEingabe();
+        String in;
+        Scanner scanner = new Scanner(System.in);
+
+        in = scanner.nextLine();
+        ArrayList<Ware> suchergebnisse = einkaeuferin.sucheWare(in);
+        // TODO Print in SuchView, wie navigieren wir zur PrüfControl?
+        scanner.close();
+
+    }
+
+    public void algorithmusFestlegen() {
+        suchView.printAlgorithmusWaehlen();
+        Scanner scanner = new Scanner(System.in);
+        String algo = scanner.nextLine();
+
+        switch (algo) {
+            case "1":
+                einkaeuferin.algorithmusFestlegen(SuchAlgorithmus.KeywordMatching);
+                break;
+            case "2":
+                einkaeuferin.algorithmusFestlegen(SuchAlgorithmus.SemanticMatching);
+                break;
+            default:
+                einkaeuferin.algorithmusFestlegen(SuchAlgorithmus.KeywordMatching);
+                break;
+
+        }
+        scanner.close();
     }
 }

@@ -1,8 +1,13 @@
 
 package suchen.al;
 
+import java.util.ArrayList;
+
+import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
 
 public interface SucheWare {
-    public Ware sucheWare(String warenname);
+    public ArrayList<Ware> sucheWare(String warenname);
+    public void algorithmusFestlegen(SuchAlgorithmus algorithmus);
+
 }
