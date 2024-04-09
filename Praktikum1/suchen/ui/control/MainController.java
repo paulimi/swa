@@ -13,7 +13,7 @@ public class MainController {
     AuswahlControl auswahlControl;
 
     public MainController(){
-        einkaeuferin = new Einkaeuferin();
+        einkaeuferin = new Einkaeuferin(id);
         view = new SuchenStartView();
         sucheControl = new SucheControl(einkaeuferin);
         pruefControl = new PruefControl(einkaeuferin);
@@ -21,11 +21,17 @@ public class MainController {
     }
     
     boolean isRunning = true;
+    int id = 1;
+
+    public void increaseId(int id){
+        id++;
+    }
 
     
     public void controlSuchenStart(){
         Scanner scanner = new Scanner(System.in);
         String in;
+        increaseId(id);
         while(isRunning){
             view.printSucheStart();
             in = scanner.nextLine();
@@ -43,6 +49,8 @@ public class MainController {
         }
         scanner.close();
     }
+
+    
 
    
 

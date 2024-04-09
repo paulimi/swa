@@ -13,6 +13,7 @@ public class SucheControl {
     SucheWare einkaeuferin;
 
     public SucheControl(SucheWare sucheWare) {
+        suchView = new SuchView();
         this.einkaeuferin = sucheWare;
     }
 
@@ -24,7 +25,8 @@ public class SucheControl {
 
         in = scanner.nextLine();
         ArrayList<Ware> suchergebnisse = einkaeuferin.sucheWare(in);
-        // TODO Print in SuchView, wie navigieren wir zur PrüfControl?
+        // TODO wie navigieren wir zur PrüfControl?
+        suchView.printSuchergebnisse(suchergebnisse);
         scanner.close();
 
     }

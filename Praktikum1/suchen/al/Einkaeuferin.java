@@ -11,6 +11,11 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
     private int id;
     private WarenSuchenUndPruefen warenSuchenUndPruefen;
 
+    public Einkaeuferin(int id){
+        this.id = id;
+        warenSuchenUndPruefen = new WarenSuchenUndPruefen();
+    }
+
     @Override
     public boolean wareZuWarenkorbHinzufuegen(Ware ware) {
         // TODO Auto-generated method stub

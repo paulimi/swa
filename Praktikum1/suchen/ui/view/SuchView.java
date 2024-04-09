@@ -1,5 +1,9 @@
 package suchen.ui.view;
 
+import java.util.ArrayList;
+
+import suchen.bl.Ware;
+
 public class SuchView {
     public void printAlgorithmusWaehlen(){
         System.out.println("1. Keyword-Matching");
@@ -11,4 +15,13 @@ public class SuchView {
         System.out.println("Wonach willst du suchen?");
         System.out.println();
     }
+
+    public void printSuchergebnisse(ArrayList<Ware> suchergebnisse){
+        for(Ware ware : suchergebnisse){
+            ware.toString();
+            System.out.println();
+        }
+    }
+
+    
 }

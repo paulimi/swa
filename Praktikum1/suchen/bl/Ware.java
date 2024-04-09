@@ -29,4 +29,12 @@ public class Ware {
    public String getBeschreibung(){
     return this.beschreibung;
    }
+
+   public String toString(){
+    return warennummer + " " + name ;
+   }
+
+   public String info(){
+    return toString() + " " + preis + " " + beschreibung;
+   }
 }
