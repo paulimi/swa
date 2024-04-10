@@ -18,7 +18,7 @@ public class SuchView {
 
     public void printSuchergebnisse(ArrayList<Ware> suchergebnisse){
         for(Ware ware : suchergebnisse){
-            ware.toString();
+            System.out.println(ware.toString());
             System.out.println();
         }
     }

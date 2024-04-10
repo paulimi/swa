@@ -8,4 +8,6 @@ public class AuswahlControl {
     public AuswahlControl(WaehleWare waehleWare){
         this.waehleWare = waehleWare;
     }
+
+    public void startAuswahlControl(){}
 }

@@ -19,6 +19,7 @@ public class WarenDAOImpl implements WarenDAO {
     public WarenDAOImpl(Connection connection){
         this.connection = connection;
     }
+    
     @Override
     public ArrayList<Ware> getWarenByName(String warenName, SuchAlgorithmus suchAlgorithmus) {
         ArrayList<Ware> waren = new ArrayList<>();

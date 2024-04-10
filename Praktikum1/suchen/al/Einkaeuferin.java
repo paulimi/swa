@@ -30,7 +30,8 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
 
     @Override
     public ArrayList<Ware> sucheWare(String warenname) {
-        return new ArrayList<>();
+       return warenSuchenUndPruefen.suchen(warenname);
+        
     }
 
     @Override
