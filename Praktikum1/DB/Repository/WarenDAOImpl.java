@@ -21,7 +21,7 @@ public class WarenDAOImpl implements WarenDAO {
     }
     @Override
     public ArrayList<Ware> getWarenByName(String warenName, SuchAlgorithmus suchAlgorithmus) {
-        List<Ware> waren = new ArrayList<>();
+        ArrayList<Ware> waren = new ArrayList<>();
         String sql;
         if(suchAlgorithmus == SuchAlgorithmus.KeywordMatching){
             sql = KeywordMatching.getSql();
