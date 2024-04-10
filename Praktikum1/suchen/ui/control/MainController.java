@@ -1,6 +1,7 @@
 package suchen.ui.control;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import DB.Db;
@@ -16,7 +17,7 @@ public class MainController implements Callback {
     Connection connection;
     Db db;
 
-    public MainController(){
+    public MainController() throws SQLException{
         einkaeuferin = new Einkaeuferin(id);
         view = new MainView();
         sucheControl = new SucheControl(einkaeuferin);

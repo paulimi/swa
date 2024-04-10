@@ -12,7 +12,7 @@ public class SemanticMatching implements WarenSuche{
     private static String sql = "SELECT warennummer, name, preis, beschreibung FROM waren WHERE name LIKE ? OR beschreibung LIKE ?";
 
     public SemanticMatching(){
-        warenDAO = new WarenDAOImpl(null) 
+        warenDAO = new WarenDAOImpl(null);
     }
     public static String getSql(){
         return sql;

@@ -1,6 +1,8 @@
 package ui.control;
 
 import ui.view.SimpleShoppingAppView;
+
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import suchen.ui.control.MainController;
@@ -11,7 +13,7 @@ public class MenueControl {
     MainController controlSuchen;
     boolean isRunning;
 
-    public MenueControl(){
+    public MenueControl() throws SQLException{
         view = new SimpleShoppingAppView();
         controlSuchen = new MainController();
         isRunning = true;

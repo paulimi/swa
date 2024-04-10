@@ -1,5 +1,6 @@
 package suchen.al;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
     private int id;
     private WarenSuchenUndPruefen warenSuchenUndPruefen;
 
-    public Einkaeuferin(int id){
+    public Einkaeuferin(int id) throws SQLException{
         this.id = id;
         warenSuchenUndPruefen = new WarenSuchenUndPruefen();
     }
@@ -23,7 +24,7 @@ public class Einkaeuferin implements SucheWare, PruefeWare, WaehleWare {
     }
 
     @Override
-    public List<Produktinformation> holeDetailinformation(Ware ware) {
+    public ArrayList<Produktinformation> holeDetailinformation(Ware ware) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'holeDetailinformation'");
     }
