@@ -1,7 +1,9 @@
 package suchen.dal;
 
+import java.util.ArrayList;
+
 import suchen.bl.Ware;
 
 public interface WarenSuche {
-    public Ware sucheWare(String suchbegriff);
+    public ArrayList<Ware> sucheWare(String suchbegriff);
 }

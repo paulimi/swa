@@ -8,9 +8,10 @@ import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
 import suchen.ui.view.SuchView;
 
-public class SucheControl {
+public class SucheControl implements Callback {
     SuchView suchView;
     SucheWare einkaeuferin;
+    private Callback callback;
 
     public SucheControl(SucheWare sucheWare) {
         suchView = new SuchView();
@@ -49,5 +50,16 @@ public class SucheControl {
 
         }
         scanner.close();
+    }
+
+    public void setCallback(Callback callback){
+        this.callback = callback;
+    }
+
+    @Override
+    public void zumMainController() {
+        if(callback != null){
+            callback.zumMainController();
+        }
     }
 }

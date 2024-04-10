@@ -1,7 +1,11 @@
 package suchen.dal;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import DB.Db;
+import DB.Repository.WarenDAO;
 import DB.Repository.WarenDAOImpl;
 import suchen.bl.Katalog;
 import suchen.bl.Produktinformation;
@@ -10,8 +14,14 @@ import suchen.bl.Ware;
 
 public class WarenRepository implements Katalog {
     WarenSuche suche;
-
-    WarenDAOImpl warenDAO;
+    Db db;
+    WarenDAO warenDAO;
+    Connection connection;
+    public WarenRepository() throws SQLException{
+        Db db = new Db();
+        connection = db.openConnection();
+        warenDAO = new WarenDAOImpl(connection);
+    }
     public ArrayList<Ware> sucheInDB(String suchbegriff, SuchAlgorithmus suchAlgorithmus){
         return warenDAO.getWarenByName(suchbegriff, suchAlgorithmus);
     }
@@ -25,8 +35,7 @@ public class WarenRepository implements Katalog {
     }
     @Override
     public ArrayList<Ware> suchen(String warenname) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'suchen'");
+        return suche.sucheWare(warenname);
     }
     @Override
     public Ware suchen(long warenNummer) {

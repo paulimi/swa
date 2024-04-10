@@ -10,12 +10,7 @@ public class SimpleShoppingApp {
 
         MenueControl menueControl = new MenueControl();
         menueControl.navigateMenue();
-        Db db = new Db();
-            try {
-                Connection connection = db.openConnection();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        
         
     }
 }

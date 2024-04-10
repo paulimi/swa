@@ -1,23 +1,29 @@
 package suchen.ui.control;
 
+import java.sql.Connection;
 import java.util.Scanner;
 
+import DB.Db;
 import suchen.al.Einkaeuferin;
-import suchen.ui.view.SuchenStartView;
+import suchen.ui.view.MainView;
 
-public class MainController {
+public class MainController implements Callback {
     Einkaeuferin einkaeuferin;
-    SuchenStartView view;
+    MainView view;
     SucheControl sucheControl;
     PruefControl pruefControl;
     AuswahlControl auswahlControl;
+    Connection connection;
+    Db db;
 
     public MainController(){
         einkaeuferin = new Einkaeuferin(id);
-        view = new SuchenStartView();
+        view = new MainView();
         sucheControl = new SucheControl(einkaeuferin);
         pruefControl = new PruefControl(einkaeuferin);
         auswahlControl = new AuswahlControl(einkaeuferin);
+        db = new Db();
+        connection = db.openConnection();
     }
     
     boolean isRunning = true;
@@ -26,7 +32,6 @@ public class MainController {
     public void increaseId(int id){
         id++;
     }
-
     
     public void controlSuchenStart(){
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +43,7 @@ public class MainController {
 
             switch(in){
                 case "1": 
+                    sucheControl.setCallback(this);
                     sucheControl.startSucheControl();
                     break;
                 case "2":
@@ -48,6 +54,28 @@ public class MainController {
             }
         }
         scanner.close();
+    }
+
+    public void pruefenUndAuswahl(){
+        view.printPruefenOderAuswahl();
+        Scanner scanner = new Scanner(System.in);
+        String in = scanner.nextLine();
+
+        switch(in){
+            case "1": 
+                auswahlControl.startAuswahlControl();
+                break;
+            case "2":
+                pruefControl.startPruefControl();
+                break;
+            default: break;
+        }
+    }
+
+
+    @Override
+    public void zumMainController() {
+        pruefControl.startPruefControl();
     }
 
     

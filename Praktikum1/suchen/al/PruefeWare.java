@@ -1,10 +1,10 @@
 package suchen.al;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import suchen.bl.Produktinformation;
 import suchen.bl.Ware;
 
 public interface PruefeWare {
-    List<Produktinformation> holeDetailinformation(Ware ware);
+    ArrayList<Produktinformation> holeDetailinformation(Ware ware);
 }
