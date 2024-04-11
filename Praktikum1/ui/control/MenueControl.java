@@ -13,35 +13,32 @@ public class MenueControl {
     MainController controlSuchen;
     boolean isRunning;
 
-    public MenueControl() throws SQLException{
+    public MenueControl() throws SQLException {
         view = new SimpleShoppingAppView();
         controlSuchen = new MainController();
         isRunning = true;
         view.printBegruessung();
     }
 
-    public void navigateMenue(){
+    public void navigateMenue() {
         Scanner scanner = new Scanner(System.in);
         String in;
-
-        while(isRunning){
-            view.printMenue();
-            in = scanner.nextLine();
-            switch(in){
-                case "1": 
-                    controlSuchen.controlSuchenStart();
-                    break;
-                case "2": 
-                    System.out.println("Warenkorb noch nicht verfuegbar.");
-                    break;
-                case "3":
-                    System.out.println("Kasse noch nicht verfuegbar.");
-                    break;
-                case "4":
-                default:
-
-            }
+        view.printMenue();
+        in = scanner.nextLine();
+        switch (in) {
+            case "1":
+                controlSuchen.controlSuchenStart(scanner);
+            case "2":
+                System.out.println("Warenkorb noch nicht verfuegbar.");
+                break;
+            case "3":
+                System.out.println("Kasse noch nicht verfuegbar.");
+                break;
+            case "4":
+            default:
+                break;
         }
         scanner.close();
+
     }
 }

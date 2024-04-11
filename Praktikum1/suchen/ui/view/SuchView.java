@@ -23,5 +23,10 @@ public class SuchView {
         }
     }
 
+    public void printZurueckInsMenueOderNochmalSuchen(){
+        System.out.println("1. Suchen");
+        System.out.println("2. Menue");
+    }
+
     
 }
