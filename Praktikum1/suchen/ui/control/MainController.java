@@ -1,86 +1,73 @@
 package suchen.ui.control;
 
-import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
-import DB.Db;
 import suchen.al.Einkaeuferin;
 import suchen.ui.view.MainView;
 
-public class MainController implements Callback {
+public class MainController {
     Einkaeuferin einkaeuferin;
     MainView view;
     SucheControl sucheControl;
     PruefControl pruefControl;
     AuswahlControl auswahlControl;
-    Connection connection;
-    Db db;
 
-    public MainController(){
+    public MainController() throws SQLException {
         einkaeuferin = new Einkaeuferin(id);
         view = new MainView();
-        sucheControl = new SucheControl(einkaeuferin);
-        pruefControl = new PruefControl(einkaeuferin);
-        auswahlControl = new AuswahlControl(einkaeuferin);
-        db = new Db();
-        connection = db.openConnection();
+        sucheControl = new SucheControl(einkaeuferin, this);
+        pruefControl = new PruefControl(einkaeuferin, this);
+        auswahlControl = new AuswahlControl(einkaeuferin, this);
     }
-    
-    boolean isRunning = true;
+
     int id = 1;
 
-    public void increaseId(int id){
+    public void increaseId(int id) {
         id++;
     }
-    
-    public void controlSuchenStart(){
-        Scanner scanner = new Scanner(System.in);
+
+    public void controlSuchenStart(Scanner scanner) {
         String in;
+        boolean isRunning = true;
         increaseId(id);
-        while(isRunning){
+        do {
             view.printSucheStart();
             in = scanner.nextLine();
 
-            switch(in){
-                case "1": 
-                    sucheControl.setCallback(this);
-                    sucheControl.startSucheControl();
+            switch (in) {
+                case "1":
+                    //sucheControl.setCallback(this);
+                    sucheControl.startSucheControl(scanner);
+                    isRunning = false;
                     break;
                 case "2":
                     System.out.println("Zurueck ins Menue");
                     isRunning = false;
                     break;
-                default: break;
+                default:
+                    break;
+            }
+        }while(isRunning);
+    }
+
+    public void pruefenUndAuswahl(Scanner scanner) {
+        String in;
+        boolean laeuft = true;
+        while (laeuft) {
+            view.printPruefenOderAuswahl();
+            in = scanner.nextLine();
+            switch (in) {
+                case "1":
+                    auswahlControl.startAuswahlControl(scanner);
+                    break;
+                case "2":
+                    pruefControl.startPruefControl(scanner);
+                    break;
+                default:
+                    break;
             }
         }
-        scanner.close();
     }
-
-    public void pruefenUndAuswahl(){
-        view.printPruefenOderAuswahl();
-        Scanner scanner = new Scanner(System.in);
-        String in = scanner.nextLine();
-
-        switch(in){
-            case "1": 
-                auswahlControl.startAuswahlControl();
-                break;
-            case "2":
-                pruefControl.startPruefControl();
-                break;
-            default: break;
-        }
-    }
-
-
-    @Override
-    public void zumMainController() {
-        pruefControl.startPruefControl();
-    }
-
-    
-
-   
-
 
 }

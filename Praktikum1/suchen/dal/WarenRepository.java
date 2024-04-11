@@ -16,11 +16,11 @@ public class WarenRepository implements Katalog {
     WarenSuche suche;
     Db db;
     WarenDAO warenDAO;
-    Connection connection;
+   
     public WarenRepository() throws SQLException{
-        Db db = new Db();
-        connection = db.openConnection();
-        warenDAO = new WarenDAOImpl(connection);
+        System.out.println("Connection erstellt.");
+        warenDAO = new WarenDAOImpl();
+       
     }
     public ArrayList<Ware> sucheInDB(String suchbegriff, SuchAlgorithmus suchAlgorithmus){
         return warenDAO.getWarenByName(suchbegriff, suchAlgorithmus);
@@ -44,7 +44,6 @@ public class WarenRepository implements Katalog {
     }
     @Override
     public Produktinformation gebeProduktinformationen(Ware ware) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'gebeProduktinformationen'");
+        return warenDAO.getProduktinformation(ware);
     }
 }

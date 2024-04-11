@@ -13,8 +13,6 @@ public class WareDTO {
     public WareDTO(Ware ware, int id){
         this.warennummer = ware.getWarennummer();
         this.name = ware.getName();
-        this.preis = ware.getPreis();
-        this.beschreibung = ware.getBeschreibung();
         this.warenkorbId = id;
     }
 }

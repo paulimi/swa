@@ -1,9 +1,11 @@
 package suchen.dal;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 import DB.Repository.WarenDAO;
 import DB.Repository.WarenDAOImpl;
+import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
 
 public class SemanticMatching implements WarenSuche{
@@ -12,7 +14,7 @@ public class SemanticMatching implements WarenSuche{
     private static String sql = "SELECT warennummer, name, preis, beschreibung FROM waren WHERE name LIKE ? OR beschreibung LIKE ?";
 
     public SemanticMatching(){
-        warenDAO = new WarenDAOImpl(null) 
+        warenDAO = new WarenDAOImpl(); 
     }
     public static String getSql(){
         return sql;
@@ -20,8 +22,8 @@ public class SemanticMatching implements WarenSuche{
 
     @Override
     public ArrayList<Ware> sucheWare(String suchbegriff) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sucheWare'");
+       return warenDAO.getWarenByName(suchbegriff, SuchAlgorithmus.SemanticMatching);
     }
+
 
 }

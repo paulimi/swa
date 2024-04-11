@@ -17,7 +17,7 @@ public class Db {
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
             connection = openConnection();
-            // createTable();
+            createTable();
             fillDb();
 
         } catch (Exception except) {

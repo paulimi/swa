@@ -8,19 +8,23 @@ import suchen.ui.view.PruefView;
 public class PruefControl {
     PruefeWare pruefeWare;
     PruefView view;
-   
-    public PruefControl(PruefeWare pruefeWare){
+    MainController controller;
+
+    public PruefControl(PruefeWare pruefeWare, MainController controller) {
         this.pruefeWare = pruefeWare;
+        this.controller = controller;
     }
 
-    public void startPruefControl(){
+    public void startPruefControl(Scanner scanner) {
+        String in;
+        in = scanner.nextLine();
         view.printPruefMenue();
+        view.printDetailansicht(pruefeWare.holeDetailinformation(in));
 
-        Scanner scanner = new Scanner(System.in);
-        String in = scanner.nextLine();
-
-        
-        
+        in = scanner.nextLine();
+        if (in.equals("1")) {
+            controller.controlSuchenStart(scanner);
+        }
     }
 
 }
