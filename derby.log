@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Apr 08 13:45:01 CEST 2024:
-Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): Instanz a816c00e-018e-bd86-a212-000007013da8
-für Datenbankverzeichnis C:\Users\paulc\OneDrive\Desktop\Studium\SWA\swa\AppDb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93
-Geladen aus file:/C:/Apache/db-derby-10.16.1.1-bin/lib/derby.jar
+Thu Apr 11 10:36:51 CEST 2024:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): Instanz a816c00e-018e-cc4d-73ad-00000f8fb9f8
+für Datenbankverzeichnis /Users/miriam/Desktop/HS/SoSe24/SWA/Praktikum/swa/AppDb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@18769467
+Geladen aus file:/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=18.0.1.1+2-6
-user.dir=C:\Users\paulc\OneDrive\Desktop\Studium\SWA\swa
-os.name=Windows 11
-os.arch=amd64
-os.version=10.0
+java.runtime.version=22+36-2370
+user.dir=/Users/miriam/Desktop/HS/SoSe24/SWA/Praktikum/swa
+os.name=Mac OS X
+os.arch=aarch64
+os.version=14.3
 derby.system.home=null
 Datenbank-Class Loader wurde gestartet - derby.database.classpath=''

@@ -3,10 +3,10 @@
         "Praktikum1"
     ],
     "java.project.referencedLibraries": [
-        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyclient.jar",
-        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyoptionaltools.jar",
-        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbyshared.jar",
-        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derbytools.jar",
-        "c:\\Apache\\db-derby-10.16.1.1-bin\\lib\\derby.jar"
+        "/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derbyoptionaltools.jar",
+        "/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derbyrun.jar",
+        "/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derbyshared.jar",
+        "/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derbytools.jar",
+        "/Users/miriam/Downloads/db-derby-10.16.1.1-bin/lib/derby.jar"
     ]
 }
