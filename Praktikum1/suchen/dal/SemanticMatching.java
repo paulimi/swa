@@ -3,7 +3,6 @@ package suchen.dal;
 import java.util.ArrayList;
 
 import DB.Repository.WarenDAO;
-import DB.Repository.WarenDAOImpl;
 import suchen.bl.SuchAlgorithmus;
 import suchen.bl.Ware;
 
@@ -12,8 +11,8 @@ public class SemanticMatching implements WarenSuche{
 
     private static String sql = "SELECT warennummer, name, preis, beschreibung FROM waren WHERE name LIKE ? OR beschreibung LIKE ?";
 
-    public SemanticMatching(){
-        warenDAO = new WarenDAOImpl(); 
+    public SemanticMatching(WarenDAO warenDAO){
+        this.warenDAO = warenDAO; 
     }
     public static String getSql(){
         return sql;

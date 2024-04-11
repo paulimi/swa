@@ -11,8 +11,8 @@ public class KeywordMatching implements WarenSuche {
     private WarenDAO warenDAO;
     private static String sql = "SELECT warennummer, name, preis, beschreibung FROM waren WHERE name = ?";
 
-    public KeywordMatching() {
-        warenDAO = new WarenDAOImpl();
+    public KeywordMatching(WarenDAO warenDAO) {
+        this.warenDAO = warenDAO;
     }
 
     @Override

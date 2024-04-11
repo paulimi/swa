@@ -25,9 +25,9 @@ public class WarenRepository implements Katalog {
     @Override
     public void legeSuchalgorithmusFest(SuchAlgorithmus algorithmus) {
         if(algorithmus == SuchAlgorithmus.SemanticMatching){
-            suche = new SemanticMatching();
+            suche = new SemanticMatching(warenDAO);
         }else{
-            suche = new KeywordMatching();
+            suche = new KeywordMatching(warenDAO);
         }
     }
     @Override
