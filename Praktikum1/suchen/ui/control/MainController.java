@@ -29,9 +29,7 @@ public class MainController {
 
     public void controlSuchenStart(Scanner scanner) {
         String in;
-        boolean isRunning = true;
         increaseId(id);
-        do {
             view.printSucheStart();
             in = scanner.nextLine();
 
@@ -39,16 +37,13 @@ public class MainController {
                 case "1":
                     //sucheControl.setCallback(this);
                     sucheControl.startSucheControl(scanner);
-                    isRunning = false;
                     break;
                 case "2":
                     System.out.println("Zurueck ins Menue");
-                    isRunning = false;
                     break;
                 default:
                     break;
             }
-        }while(isRunning);
     }
 
     public void pruefenUndAuswahl(Scanner scanner) {

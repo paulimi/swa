@@ -1,6 +1,5 @@
 package suchen.ui.control;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,11 +16,8 @@ public class SucheControl {
     public SucheControl(SucheWare sucheWare, MainController controller) {
         suchView = new SuchView();
         this.einkaeuferin = sucheWare;
-        try {
-            this.controller = new MainController();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            this.controller = controller;
+       
 
     }
 
