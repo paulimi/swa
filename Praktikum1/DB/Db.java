@@ -67,11 +67,12 @@ public class Db {
     }
 
     public Connection openConnection() throws SQLException {
-        if (connection == null) {
+        if (connection == null || connection.isClosed()) {
             try {
-                DriverManager.getConnection(dbURL);
+                connection = DriverManager.getConnection(dbURL);
             } catch (SQLException e) {
                 e.printStackTrace();
+                throw e; // Wir geben die Exception weiter, um sie an den Aufrufer zu signalisieren
             }
         }
         return connection;
