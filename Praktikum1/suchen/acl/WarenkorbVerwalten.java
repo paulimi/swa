@@ -1,12 +1,10 @@
 package suchen.acl;
 
-import suchen.al.WaehleWare;
-import suchen.bl.Ware;
 
-public class WarenkorbVerwalten implements WaehleWare {
+public class WarenkorbVerwalten {
 
-    @Override
-    public boolean wareZuWarenkorbHinzufuegen(Ware ware) {
+  
+    public boolean wareZuWarenkorbHinzufuegen(WareDTO wareDTO) {
         System.out.println("Artikel wurde dem Warenkorb hinzugefuegt!");
         return true;
     }

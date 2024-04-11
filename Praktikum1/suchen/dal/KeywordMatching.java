@@ -1,6 +1,5 @@
 package suchen.dal;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
 import DB.Repository.WarenDAO;
