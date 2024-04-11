@@ -21,6 +21,7 @@ public class WarenDAOImpl implements WarenDAO {
         Db db = new Db();
         try {
             connection = db.openConnection();
+            System.out.println("Connection zur DB erfolgreich hergestellt.");
         } catch (SQLException e) {
             System.out.println("Neue Datenbank wird erstellt...");
         }
@@ -55,6 +56,7 @@ public class WarenDAOImpl implements WarenDAO {
             }
 
         } catch (SQLException e) {
+            
             System.err.println("getWarenByName: Es ist ein Fehler aufgetreten.");
         }
         return waren;

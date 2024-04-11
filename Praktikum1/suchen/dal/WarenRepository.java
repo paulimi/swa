@@ -17,9 +17,7 @@ public class WarenRepository implements Katalog {
     WarenDAO warenDAO;
    
     public WarenRepository() throws SQLException{
-        System.out.println("Connection erstellt.");
         warenDAO = new WarenDAOImpl();
-       
     }
     public ArrayList<Ware> sucheInDB(String suchbegriff, SuchAlgorithmus suchAlgorithmus){
         return warenDAO.getWarenByName(suchbegriff, suchAlgorithmus);
